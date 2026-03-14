@@ -93,7 +93,7 @@ def draw():
     py5.push_matrix()
     py5.translate(WIDTH / 2, HEIGHT / 2)
     py5.rotate_z(py5.PI)
-    py5.scale(SCALE_FACTOR)
+    py5.scale(-SCALE_FACTOR, SCALE_FACTOR)
     py5.translate(-WIDTH / 2, -HEIGHT / 2)
 
     with lock:

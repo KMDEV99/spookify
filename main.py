@@ -15,7 +15,7 @@ CLIENT_ID = os.getenv("SPOTIPY_CLIENT_ID")
 CLIENT_SECRET = os.getenv("SPOTIPY_CLIENT_SECRET")
 REDIRECT_URI = os.getenv("SPOTIPY_REDIRECT_URI")
 WIDTH, HEIGHT = 720, 720
-SCALE_FACTOR = 0.7
+SCALE_FACTOR = 0.8
 CACHE_DIR = "album_cache"
 
 # --- GLOBAL STATE ---
@@ -42,9 +42,12 @@ def setup():
     try:
         font_title = py5.create_font("DejaVu Sans Bold", 44)
     except:
-        font_title = py5.create_font("SansSerif", 44, bold=True)
+        font_title = py5.create_font("SansSerif", 44)
 
-    font_artist = py5.create_font("SansSerif", 16)
+    try:
+        font_artist = py5.create_font("DejaVu Sans Bold", 24)
+    except:
+        font_artist = py5.create_font("SansSerif", 24)
 
     spotify = SpotifyHandler(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI, CACHE_DIR)
     threading.Thread(target=update_thread, daemon=True).start()
@@ -126,7 +129,7 @@ def draw():
 
         # 2. WAVE EQUALIZER
         py5.push_matrix()
-        py5.translate(WIDTH / 2 - (60 * 8) / 2, HEIGHT - 60)
+        py5.translate(WIDTH / 2 - (60 * 8) / 2, HEIGHT - 130)
         for i in range(60):
             edge = py5.sin(py5.remap(i, 0, 59, 0, py5.PI))
             n = py5.noise((i + wave_offset) * 0.04, py5.frame_count * 0.02)

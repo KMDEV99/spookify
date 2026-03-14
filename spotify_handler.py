@@ -6,7 +6,7 @@ from spotipy.oauth2 import SpotifyOAuth
 import spotipy
 
 class SpotifyHandler:
-    def __init__(self, client_id, client_secret, redirect_uri):
+    def __init__(self, client_id, client_secret, redirect_uri, cache_dir):
         self.sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
             client_id=client_id,
             client_secret=client_secret,
@@ -14,6 +14,7 @@ class SpotifyHandler:
             scope="user-read-currently-playing",
             cache_path=".cache"
         ))
+        self.cache_dir = cache_dir
 
     def get_current_track(self):
         """Fetches currently playing track info from Spotify."""

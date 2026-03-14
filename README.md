@@ -10,7 +10,17 @@ A high-end, real-time Spotify music visualizer designed for **Raspberry Pi 4**. 
 - **RPi Optimized**: Uses local caching, texture downsampling, and efficient P3D rendering.
 
 ## 🚀 Installation
+
 1. **Clone the repo:**
    ```bash
-   git clone [https://github.com/KMDEV99/spookify.git](https://github.com/KMDEV99/spookify.git)
+   git clone https://github.com/KMDEV99/spookify.git
    cd spookify
+   
+   python -m venv venv
+   source venv/bin/activate  # On Windows use: venv\Scripts\activate
+   pip install -r requirements.txt
+   
+   python main.py
+
+## ⚖️ License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

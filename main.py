@@ -5,11 +5,14 @@ import colorsys
 import os
 from spotify_handler import SpotifyHandler
 from utils import get_smart_hsv
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # --- CONFIGURATION ---
-CLIENT_ID = "YOUR_ID"
-CLIENT_SECRET = "YOUR_SECRET"
-REDIRECT_URI = "http://127.0.0.1:8888/callback"
+CLIENT_ID = os.getenv("SPOTIPY_CLIENT_ID")
+CLIENT_SECRET = os.getenv("SPOTIPY_CLIENT_SECRET")
+REDIRECT_URI = os.getenv("SPOTIPY_REDIRECT_URI")
 WIDTH, HEIGHT = 720, 720
 CACHE_DIR = "album_cache"
 

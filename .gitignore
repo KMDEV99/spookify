@@ -1,6 +1,5 @@
 # --- Spotify Credentials & Auth ---
 .cache
-.env
 
 # --- Project Specific Caches ---
 album_cache/

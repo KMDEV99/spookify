@@ -11,7 +11,7 @@ class SpotifyHandler:
             client_id=client_id,
             client_secret=client_secret,
             redirect_uri=redirect_uri,
-            scope="user-read-currently-playing",
+            scope="user-read-currently-playing user-read-playback-state",
             cache_path=".cache"
         ))
         self.cache_dir = cache_dir

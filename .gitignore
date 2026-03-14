@@ -1,0 +1,19 @@
+# --- Spotify Credentials & Auth ---
+.cache
+.env
+
+# --- Project Specific Caches ---
+album_cache/
+
+# --- Python Environment ---
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.venv/
+.idea/
+
+# --- System Files ---
+.DS_Store
+Thumbs.db

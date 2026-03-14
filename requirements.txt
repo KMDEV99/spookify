@@ -1,0 +1,5 @@
+py5
+spotipy
+Pillow
+requests
+numpy
